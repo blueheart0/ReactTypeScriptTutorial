@@ -25,7 +25,10 @@
     "strictBindCallApply": true,
     "strictPropertyInitialization": true,
     "noImplicitThis": true,
-    "alwaysStrict": true
+    "alwaysStrict": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "baseUrl": "./src"
   },
   "include": [
     "src"

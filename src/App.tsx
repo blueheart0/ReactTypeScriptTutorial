@@ -4,7 +4,6 @@ import "./App.css";
 import { FirstLoading } from "./components";
 
 const App: React.FC = () => {
-  console.log("test");
   return (
     <div className="App">
       <header className="App-header">

@@ -1,11 +1,13 @@
 import React from "react";
 import App from "./App";
+import { Provider } from "./provider";
+
 
 const Root: React.FC = () => {
   return (
-    <div>
+    <Provider>
       <App />
-    </div>
+    </Provider>
   );
 };
 
