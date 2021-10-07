@@ -2,13 +2,16 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { FirstLoading } from "./components";
+import { useIntl } from "react-intl";
+import { IntlShape } from "react-intl/src/types";
 
 const App: React.FC = () => {
+  const intl: IntlShape = useIntl();
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <FirstLoading msg={"Testing"} />
+        <FirstLoading msg={intl.formatMessage({ id: "test" })} />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>

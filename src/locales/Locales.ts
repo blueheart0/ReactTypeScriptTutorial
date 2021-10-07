@@ -8,6 +8,10 @@ class Languages {
     Languages._instance = this;
   }
 
+  public get current(): string {
+    return localStorage.getItem("lang") || "";
+  }
+
   public get direction(): string {
     return localStorage.getItem("lang") === "ar" ? "rtl" : "ltr";
   }
@@ -28,7 +32,6 @@ class Locales {
   }
 
   public Languages = new Languages();
-
 }
 
 export default new Locales();

@@ -1,5 +1,5 @@
 import rtlPlugin from "stylis-plugin-rtl";
-import { CacheProvider } from "@emotion/react";
+import { CacheProvider, EmotionCache } from "@emotion/react";
 import createCache from "@emotion/cache";
 import React from "react";
 import { Locales } from "../../../locales";
@@ -8,10 +8,19 @@ interface EmotionProviderProps {
   children?: React.ReactNode;
 }
 
-const cacheRtl = createCache({
-  key: "muirtl",
-  stylisPlugins: Locales.Languages.direction === "rtl" ? [rtlPlugin] : []
-});
+let cacheRtl: EmotionCache;
+let key: string = "muirtl";
+if (Locales.Languages.direction === "rtl") {
+  // @ts-ignore
+  cacheRtl = createCache({
+    key: key,
+    stylisPlugins: [rtlPlugin]
+  });
+} else {
+  cacheRtl = createCache({
+    key: key
+  });
+}
 
 const EmotionProvider = (
   props: EmotionProviderProps

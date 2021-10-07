@@ -8,6 +8,7 @@ type Props = {
 const FirstLoading: React.FC<Props> = props => {
   const { msg } = props;
   const theme = useTheme();
+
   console.log(theme);
   return (
     <Box
